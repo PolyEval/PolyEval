@@ -1,0 +1,75 @@
+def SelfContain
+    fun bool_example(x: bool) -> str
+        (true) -> "true"
+        (false) -> "false"
+    
+    fun int_example(x: int) -> str
+        (3) -> "3"
+        (-107) -> "-107"
+    
+    fun double_example(x: double) -> str
+        (0.0) -> "0.000000"
+        (-0.0) -> "0.000000"
+        (3.0) -> "3.000000"
+        (31.4159265) -> "31.415926"
+        (123456.789) -> "123456.789000"
+    
+    fun string_example(x: str) -> str
+        ("Hello, World!") -> "\"Hello, World!\""
+        ("!@#$%^&*()[]{}<>:;,.'\"?|") -> "\"!@#$%^&*()[]{}<>:;,.'\\\"?|\""
+        ("/\\\n\t") -> "\"/\\\\\\n\\t\""
+    
+    fun list_int_example(x: list<int>) -> str
+        ([]) -> "[]"
+        ([1, 2, 3]) -> "[1, 2, 3]"
+
+    fun list_bool_example(x: list<bool>) -> str
+        ([true, false, true]) -> "[true, false, true]"
+
+    fun list_str_example(x: list<str>) -> str
+        (["apple", "banana", "cherry"]) -> "[\"apple\", \"banana\", \"cherry\"]"
+
+    fun list_list_int_example(x: list<list<int>>) -> str
+        ([]) -> "[]"
+        ([[1, 2, 3], [4, 5, 6]]) -> "[[1, 2, 3], [4, 5, 6]]"
+
+    fun ulist_int_example(x: ulist<int>) -> str
+        ([3, 2, 1]) -> "[1, 2, 3]"
+
+    fun list_ulist_int_example(x: list<ulist<int>>) -> str
+        ([[2, 1, 3], [6, 5, 4]]) -> "[[1, 2, 3], [4, 5, 6]]"
+
+    fun ulist_list_int_example(x: ulist<list<int>>) -> str
+        ([[4, 5, 6], [1, 2, 3]]) -> "[[1, 2, 3], [4, 5, 6]]"
+
+    fun idict_int_example(x: dict<int, int>) -> str
+        ({}) -> "{}"
+    
+    fun idict_str_example(x: dict<int, str>) -> str
+        ({1 => "one", 2 => "two"}) -> "{1=>\"one\", 2=>\"two\"}"
+    
+    fun sdict_int_example(x: dict<str, int>) -> str
+        ({"one" => 1, "two" => 2}) -> "{\"one\"=>1, \"two\"=>2}"
+
+    fun idict_list_int_example(x: dict<int, list<int>>) -> str
+        ({}) -> "{}"
+        ({1 => [1, 2, 3], 2 => [4, 5, 6]}) -> "{1=>[1, 2, 3], 2=>[4, 5, 6]}"
+
+    fun sdict_list_int_example(x: dict<str, list<int>>) -> str
+        ({"one" => [1, 2, 3], "two" => [4, 5, 6]}) -> "{\"one\"=>[1, 2, 3], \"two\"=>[4, 5, 6]}"
+    
+    fun list_idict_int_example(x: list<dict<int, int>>) -> str
+        ([{1 => 2, 3 => 4}]) -> "[{1=>2, 3=>4}]"
+    
+    fun idict_idict_int_example(x: dict<int, dict<int, int>>) -> str
+        ({1 => {2 => 3}, 4 => {5 => 6}}) -> "{1=>{2=>3}, 4=>{5=>6}}"
+    
+    fun sdict_sdict_int_example(x: dict<str, dict<str, int>>) -> str
+        ({"one" => {"two" => 3}, "four" => {"five" => 6}}) -> "{\"four\"=>{\"five\"=>6}, \"one\"=>{\"two\"=>3}}"
+
+    fun option_int_example(x: int?) -> str
+        (42) -> "42"
+        (null) -> "null"
+
+    fun list_option_int_example(x: list<int?>) -> str
+        ([1, null, 3]) -> "[1, null, 3]"

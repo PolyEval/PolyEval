@@ -20,7 +20,7 @@ The `compact` branch includes a lighter version that just download dependencies 
 $ git clone -b compact --recursive https://github.com/polyeval/polyeval
 $ cd ./polyeval
 $ nix-shell --pure
-$ pdm use # select python 3.11 here
+$ pdm use # select any python version here
 $ pdm install
 ```
 

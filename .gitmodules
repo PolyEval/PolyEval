@@ -1,0 +1,3 @@
+[submodule "execution-templates"]
+	path = execution-templates
+	url = https://github.com/polyeval/execution-templates

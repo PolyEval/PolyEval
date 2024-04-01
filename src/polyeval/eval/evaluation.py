@@ -9,17 +9,11 @@ from polyeval.eval.execution import ExecutionTemplate, ExecutionProject
 from polyeval.object.output_result import parse_result
 
 
-import importlib
+from polyeval import find_target
 
 
 def get_test_code(lang: str, question: Question) -> str:
-    target_package_name = f"polyeval.target.{lang}"
-    target_package = importlib.import_module(target_package_name)
-    if hasattr(target_package, "tests_generator"):
-        tests_generator = target_package.tests_generator
-    else:
-        raise ValueError(f"No generator for {lang} found")
-    return tests_generator.gen_code(question.functions)
+    return find_target.tests_generator.gen_code(question.functions)
 
 
 def create_evalution_project(

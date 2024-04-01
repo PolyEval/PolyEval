@@ -8,13 +8,24 @@ from polyeval.object.question import Question
 from polyeval.eval.execution import ExecutionTemplate, ExecutionProject
 from polyeval.object.output_result import parse_result
 
+import importlib
 
-from polyeval import find_target
-
+def find_target(lang: str) -> str:
+    target_package_name = f"polyeval.target.{lang}"
+    try:
+        target_package = importlib.import_module(target_package_name)
+    except ModuleNotFoundError:
+        target_package = None
+    if target_package is None:
+        extra_target_package_name = f"polyeval_extra.target.{lang}"
+        try:
+            target_package = importlib.import_module(extra_target_package_name)
+        except ModuleNotFoundError:
+            raise ValueError(f"No generator for {lang} found")
+    return target_package
 
 def get_test_code(lang: str, question: Question) -> str:
-    return find_target.tests_generator.gen_code(question.functions)
-
+    return find_target(lang).tests_generator.gen_code(question.functions)
 
 def create_evalution_project(
     template: ExecutionTemplate,

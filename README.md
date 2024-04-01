@@ -20,6 +20,10 @@ The `compact` branch includes a lighter version that just download dependencies 
 $ git clone -b compact --recursive https://github.com/polyeval/polyeval
 $ cd ./polyeval
 $ nix-shell --pure
+```
+
+The project leverage `PDM` for install packages:
+```bash
 $ pdm use # select any python version here
 $ pdm install
 ```

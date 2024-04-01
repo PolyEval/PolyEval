@@ -266,7 +266,7 @@ def parse_dsl_output():
     )
 
     function_literal = function_signature_literal + pyp.Group(
-        pyp.OneOrMore(testcase_literal)
+        pyp.ZeroOrMore(testcase_literal)
     )
     function_literal.set_parse_action(
         lambda s, loc, t: OutFunctionNode(

@@ -1,0 +1,4 @@
+def Example
+    fun all_above(numbers: list<double>, threshold: double) -> bool
+        ([1.0, 2.0, 3.0], 0.5) -> true
+        ([1.0, 2.8, 3.0, 4.0, 5.0, 0.5], 0.7) -> false

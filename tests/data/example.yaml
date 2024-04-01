@@ -1,0 +1,144 @@
+cpp: |
+  bool allAbove(const vector<double>& numbers, double threshold) {
+      return ranges::all_of(numbers, [=](double n) { return n > threshold; });
+  }
+csharp: |
+  static bool AllAbove(List<double> numbers, double threshold) {
+      return numbers.All(n => n > threshold);
+  }
+go: |
+  func allAbove(numbers []float64, threshold float64) bool {
+      for _, n := range numbers {
+          if n <= threshold {
+              return false
+          }
+      }
+      return true
+  }
+java: |
+  static boolean allAbove(List<Double> numbers, double threshold) {
+      return numbers.stream().allMatch(n -> n > threshold);
+  }
+javascript: |
+  function allAbove(numbers, threshold) {
+      return numbers.every(n => n > threshold);
+  }
+php: |
+  function all_above($numbers, $threshold) {
+      return array_reduce($numbers, function($carry, $n) use ($threshold) {
+          return $carry && $n > $threshold;
+      }, true);
+  }
+python: |
+  def all_above(numbers, threshold):
+      return all(n > threshold for n in numbers)
+ruby: |
+  def all_above(numbers, threshold)
+      numbers.all? { |n| n > threshold }
+  end
+
+coffeescript: |
+  allAbove = (numbers, threshold) ->
+      numbers.every (n) -> n > threshold
+dart: |
+  bool allAbove(List<double> numbers, double threshold) {
+      return numbers.every((n) => n > threshold);
+  }
+elixir: |
+  def all_above(numbers, threshold) do
+      Enum.all?(numbers, &(&1 > threshold))
+  end
+groovy: |
+  def allAbove(numbers, threshold) {
+      numbers.every { it > threshold }
+  }
+kotlin: |
+  fun allAbove(numbers: List<Double>, threshold: Double): Boolean {
+      return numbers.all { it > threshold }
+  }
+objectivec: |
+  + (NSNumber *)allAbove:(NSArray<NSNumber *> *)numbers :(NSNumber *)threshold {
+      return @([numbers filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self > %@", threshold]].count == numbers.count);
+  }
+perl: |
+  sub all_above ($numbers, $threshold) {
+      return all { $_ > $threshold } @$numbers;
+  }
+rust: |
+  fn all_above(numbers: &Vec<f64>, threshold: f64) -> bool {
+      numbers.iter().all(|&n| n > threshold)
+  }
+scala: |
+  def allAbove(numbers: Seq[Double], threshold: Double): Boolean = {
+      numbers.forall(_ > threshold)
+  }
+swift: |
+  func allAbove(_ numbers: [Double], _ threshold: Double) -> Bool {
+      return numbers.allSatisfy { $0 > threshold }
+  }
+typescript: |
+  function allAbove(numbers: number[], threshold: number): boolean {
+      return numbers.every(n => n > threshold);
+  }
+
+clojure: |
+  (defn all-above [numbers threshold]
+      (every? #(> % threshold) numbers))
+crystal: |
+  def all_above(numbers : Array(Float64), threshold : Float64) : Bool
+      numbers.all? { |n| n > threshold }
+  end
+d: |
+  bool allAbove(double[] numbers, double threshold) {
+      return numbers.all!(n => n > threshold);
+  }
+elm: |
+  allAbove : List Float -> Float -> Bool
+  allAbove numbers threshold =
+      List.all (\n -> n > threshold) numbers
+erlang: |
+  all_above(Numbers, Threshold) ->
+      lists:all(fun(N) -> N > Threshold end, Numbers).
+fsharp: |
+  let allAbove (numbers: float list) (threshold: float): bool =
+      List.forall (fun n -> n > threshold) numbers
+hack: |
+  function all_above(vec<float> $numbers, float $threshold): bool {
+      return C\every($numbers, $n ==> $n > $threshold);
+  }
+haskell: |
+  allAbove :: [Double] -> Double -> Bool
+  allAbove numbers threshold = 
+      all (> threshold) numbers
+julia: |
+  function all_above(numbers::Vector{Float64}, threshold::Float64)::Bool
+      return all(n -> n > threshold, numbers)
+  end
+lua: |
+  function all_above(numbers, threshold)
+      for _, n in ipairs(numbers) do
+          if n <= threshold then
+              return false
+          end
+      end
+      return true
+  end
+nim: |
+  proc allAbove(numbers: seq[float], threshold: float): bool =
+      result = numbers.allIt(it > threshold)
+ocaml: |
+  let all_above (numbers: float list) (threshold: float) : bool =
+      List.for_all (fun n -> n > threshold) numbers
+purescript: |
+  allAbove :: Array Number -> Number -> Boolean
+  allAbove numbers threshold =
+      Foldable.all (\n -> n > threshold) numbers
+racket: |
+  (define (all-above numbers threshold)
+      (for/and ([n numbers])
+          (> n threshold)))
+rescript: |
+  let allAbove = (numbers: array<float>, threshold: float): bool => {
+      numbers->Array.every(n => n > threshold);
+  }
+

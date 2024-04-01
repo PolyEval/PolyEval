@@ -160,7 +160,7 @@ def initialize_template(
 
         target = config_targets[name]
         if "cwd" not in target or "main" not in target or "run" not in target:
-            raise ValueError(f"Invalid configuration for target {target}")
+            raise ValueError(f"Invalid configuration for target {name}")
 
         cwd = os.path.join(dir, target["cwd"])
         if os.path.isabs(cwd):

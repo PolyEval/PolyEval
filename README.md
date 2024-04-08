@@ -79,4 +79,5 @@ $ python tests/test_example_evaluation.py
 
 ## Supported Languages
 
-Currently, 42 popular programming languages are supported: C#, C++, Clojure, CoffeeScript, Common Lisp, Crystal, D, Dart, Elixir, Elm, Emacs Lisp, Erlang, F#, Go, Groovy, Hack, Haskell, Haxe, Java, JavaScript, Julia, Kotlin, Lua, Nim, Objective-C, OCaml, Perl, PHP, PureScript, Python, Racket, Raku, ReasonML, ReScript, Ruby, Rust, Scala, Scheme, StandardML, Swift, TypeScript, Visual Basic.
+Currently, 34 popular programming languages are supported in main packages: C#, C++, Clojure, CoffeeScript, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Go, Groovy, Hack, Haskell, Java, JavaScript, Julia, Kotlin, Lua, Nim, Objective-C, OCaml, Perl, PHP, PureScript, Python, Racket, ReScript, Ruby, Rust, Scala, Swift, TypeScript.
+Extra targets are supported in https://github.com/polyeval/polyeval-extra/.

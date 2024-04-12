@@ -1,6 +1,41 @@
 # Polyeval
 Easy and Extensible Tool for Benchmark Construction and Evaluation in Multiple Programming Languages. 
 
+## Installation
+
+You can install `PolyEval` python package using `pip`:
+```bash
+$ pip install git+https://github.com/polyeval/polyeval.git
+```
+
+## Example
+
+This repository contains tests for example usage, which leverage `Nix` for reproduction of the runtime enviroment.
+```bash
+$ git clone --recursive https://github.com/polyeval/polyeval
+$ cd ./polyeval
+$ nix-shell --pure # Will download pdm for project management, as well as dependencies for executing programs in all 34 programming languages. 
+$ pdm install
+$ pdm run python tests/test_example_evaluation.py # Will execute example tests for 34 programming languagaes.
+```
+
+Download dependencies may occupy lots of time and disk space. [polyeval-example](https://github.com/polyeval/polyeval-example) provides an example that download dependencies and evaluate programs of 8 mainstream programming languages.
+
+```bash
+$ git clone --recursive https://github.com/polyeval/polyeval-example
+$ cd ./polyeval
+$ nix-shell --pure
+$ pdm install
+$ pdm run python test_example_evaluation.py # Will execute example tests for 8 programming languagaes.
+```
+
+
+
+## Usage
+
+
+
+
 ## Prerequisite
 `PolyEval` leverages `Nix` for reproduction of the runtime enviroment. You need to install `Nix` on your computer first. If you are using Windows, using `NixOS-WSL` is highly recommended.
 

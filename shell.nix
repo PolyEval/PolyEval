@@ -7,7 +7,7 @@ pkgs.mkShell.override { stdenv = executionEnv.stdenv; } {
   packages = [
     pkgs.git
     pkgs.cacert
-    pkgs.python39
+    pkgs.python3
     pkgs.pdm
   ] ++ executionEnv.buildInputs;
 }

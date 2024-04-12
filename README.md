@@ -19,7 +19,7 @@ $ pdm install
 $ pdm run python tests/test_example_evaluation.py # Will execute example tests for 34 programming languagaes.
 ```
 
-Download dependencies may occupy lots of time and disk space. [polyeval-example](https://github.com/polyeval/polyeval-example) provides an example that download dependencies and evaluate programs of 8 mainstream programming languages.
+Download dependencies for all 34 programming langugaes may occupy lots of time and disk space. [`polyeval-example`](https://github.com/polyeval/polyeval-example) provides an example that just download dependencies and evaluate programs of 8 mainstream programming languages.
 
 ```bash
 $ git clone --recursive https://github.com/polyeval/polyeval-example
@@ -39,7 +39,10 @@ def Example
         ([1.0, 2.0, 3.0], 0.5) -> true
         ([1.0, 2.8, 3.0, 4.0, 5.0, 0.5], 0.7) -> false
 ```
-This defines the behaviour of generated test program. For detailes, check [`PolyEvalDescription.md`](./PolyEvalDescription.md).
+This defines the behaviour of generated test program. 
+
+<!--- For detailes, check [`PolyEvalDescription.md`](./PolyEvalDescription.md). 
+-->
 
 ### Evaluation
 
@@ -51,9 +54,7 @@ bool allAbove(const vector<double>& numbers, double threshold) {
 ```
 Then evaluate with this Python script:
 ```python
-from polyeval import parse_questions
-from polyeval.eval.execution import initialize_template
-from polyeval.eval.evaluation import evaluate
+from polyeval import parse_questions, initialize_template, evaluate
 
 ped_dsl = """
 def Example
@@ -72,13 +73,8 @@ template = initialize_template("./execution-template", targets=["cpp"])
 status, _ = evaluate(template, "cpp", question, code, exist_ok=True)
 print(f"Evaluation Result: {status}")
 ```
-More exmaples are placed at [`tests`](./tests) folder. You can run them directly:
-```bash
-$ python tests/test_execution.py
-$ python tests/test_example_evaluation.py
-```
 
 ## Supported Languages
 
 Currently, 34 popular programming languages are supported in main packages: C#, C++, Clojure, CoffeeScript, Crystal, D, Dart, Elixir, Elm, Erlang, F#, Go, Groovy, Hack, Haskell, Java, JavaScript, Julia, Kotlin, Lua, Nim, Objective-C, OCaml, Perl, PHP, PureScript, Python, Racket, ReScript, Ruby, Rust, Scala, Swift, TypeScript.
-Extra targets are supported in https://github.com/polyeval/polyeval-extra/.
+More languages are supported in [`polyeval-extra`](https://github.com/polyeval/polyeval-extra/) package.

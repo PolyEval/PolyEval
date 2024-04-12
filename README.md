@@ -23,44 +23,10 @@ Download dependencies may occupy lots of time and disk space. [polyeval-example]
 
 ```bash
 $ git clone --recursive https://github.com/polyeval/polyeval-example
-$ cd ./polyeval
+$ cd ./polyeval-example
 $ nix-shell --pure
 $ pdm install
 $ pdm run python test_example_evaluation.py # Will execute example tests for 8 programming languagaes.
-```
-
-
-
-## Usage
-
-
-
-
-## Prerequisite
-`PolyEval` leverages `Nix` for reproduction of the runtime enviroment. You need to install `Nix` on your computer first. If you are using Windows, using `NixOS-WSL` is highly recommended.
-
-After installation of  `Nix`, clone this repository with submodules:
-```bash
-$ git clone --recursive https://github.com/polyeval/polyeval
-```
-And use `nix-shell` to download the dependencies and reproduce the environment:
-```bash
-$ cd ./polyeval
-$ nix-shell --pure
-```
-Note: this will download all dependencies for executing programs in 34 programming languages, which may occupy a lot of download time and disk space.
-
-The `compact` branch includes a lighter version that just download dependencies of 8 most popular languages: C#, C++, Go, Java, JavaScript, PHP, Python, Ruby, which requires less download time and disk space. You can clone the branch following these instructions: 
-```bash
-$ git clone -b compact --recursive https://github.com/polyeval/polyeval
-$ cd ./polyeval
-$ nix-shell --pure
-```
-
-The project leverage `PDM` for install packages:
-```bash
-$ pdm use # select any python version here
-$ pdm install
 ```
 
 ## Usage

@@ -38,7 +38,7 @@ class CPPTargetTests(BaseTargetTests):
         test_entry_ret = ""
         tests = self.gen_all_tests(funcs)
         for func_signature, func_tests in tests:
-            test_entry_ret += f'"\\n{func_signature}\\n" + '
+            test_entry_ret += f'string("\\n{func_signature}\\n") + '
             for test_item_name, test_item_code in func_tests:
                 test_entry_ret += f"{test_item_name}() + "
                 result += test_item_code

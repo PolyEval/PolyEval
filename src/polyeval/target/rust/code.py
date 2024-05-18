@@ -18,7 +18,7 @@ class RustTargetCode(BaseTargetCode):
     def gen_signature(self, func: Function):
         name = self.naming.get_func_name(func.name)
         args = [
-            f"{self.naming.get_var_name(arg.name): {self.type.by_ref(arg.type)}}"
+            f"{self.naming.get_var_name(arg.name)}: {self.type.by_ref(arg.type)}"
             for arg in func.parameters
         ]
         args_str = ", ".join(args)

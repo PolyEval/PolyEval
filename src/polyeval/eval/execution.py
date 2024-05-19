@@ -51,13 +51,14 @@ class ExecutionProject:
         self.cwd = cwd
         self.run = run
 
-    def execute(self) -> (bool, str):
+    def execute(self, timeout=20) -> (bool, str):
         result = subprocess.run(
             self.run,
             cwd=self.cwd,
             shell=True,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
+            timeout=timeout,
         )
         if result.returncode != 0:
             return False, None

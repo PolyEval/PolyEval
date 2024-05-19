@@ -55,11 +55,12 @@ def evaluate(
     exist_ok=False,
     clean=False,
     clean_when_succeed=True,
+    timeout=20,
 ) -> (bool, str):
     project = create_evalution_project(
         template, lang, question, code, proj_name, exist_ok=exist_ok
     )
-    status, result = project.execute()
+    status, result = project.execute(timeout=timeout)
     if clean:
         project.clean()
     if not status:

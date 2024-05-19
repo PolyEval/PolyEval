@@ -64,7 +64,10 @@ def evaluate(
         project.clean()
     if not status:
         return False, "Execution Failed"
-    funcs = parse_result(result)
+    try:
+        funcs = parse_result(result)
+    except Exception as e:
+        return False, f"Error parsing output: {e}"
     is_expected = True
     for func in funcs:
         if not func.is_expected():

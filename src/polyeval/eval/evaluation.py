@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import random
+import subprocess
 
 from polyeval.misc.utils import add_indent
 from polyeval.object.question import Question
@@ -60,7 +61,10 @@ def evaluate(
     project = create_evalution_project(
         template, lang, question, code, proj_name, exist_ok=exist_ok
     )
-    status, result = project.execute(timeout=timeout)
+    try:
+        status, result = project.execute(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        return False, "Timeout"
     if clean:
         project.clean()
     if not status:

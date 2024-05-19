@@ -1,6 +1,6 @@
 [project]
 name = "polyeval"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = [
     {name = "hzfsls", email = "2508342095@qq.com"},
